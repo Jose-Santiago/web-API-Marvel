@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto MARVEL</title>
+    <link rel="icon" href="/images/logoAPI.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/css/personajes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/images/avatar.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../css/estilos.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="container-navvar">
+                <ul class="link-container" id="link-container">
+                    <li><i class='bx bx-home-smile' ></i>Home</li>
+                    <li><i class='bx bxl-heroku'></i><a href="pages/personajes.html">Personajes</a></li>
+                    <li id="comics" class="comics"><i class='bx bx-book-reader'></i>Comics</li>
+                    <li id="series" class="series"><i class='bx bx-tv'></i>Series</li>
+                </ul>
+    
+                <div class="link-container-user-menu" id="openModal">
+                    <a href="#" class="user-menu-tab sign"><i class='bx bx-door-open'></i>Sesión</a>
+                    <span class="user-menu-tab separator"> | </span>
+                    <a class="user-menu-tab" id="user-join"><i class='bx bxs-edit-location'></i>Registrate</a>
+                </div>
+            </div>
+            <div class="banner">
+                <img src="/images/avengers_back.jpg" alt="avengers" >
+                <div class="banner-text">
+                    <span>UNIVERSO MARVEL</span>
+                    <span>Dejate Enganchar a un abundante universo de héroes y villanos!</span>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="containerP">
+        <main>
+            <h1>Personajes Marvel</h1>
+        </main>
+        <section>
+            <div class="form-container">
+                <form id="searchForm">
+                    <div class="containerSearch">
+                        <input type="text" id="searchInput" placeholder="Buscar un personaje por Nombre o ID...">
+                        <i class="fa fa-search"></i>
+                    </div>
+                    <!-- <button type="submit" id="btnSearch" class="btn">Buscar</button> -->
+                    <div class="container-selected">
+                        <div class="container-numCards">
+                            <label class="lblNumCards" for="numCards">Numero de tarjetas:</label>
+                            <select id="numCards" name="numCards">
+                                <option value="10" >10 tarjetas</option>
+                                <option value="20" selected>20 tarjetas</option>
+                                <option value="50" >50 tarjetas</option>
+                                <option value="100">100 tarjetas</option>
+                            </select>
+                        </div>
+                        <div class="containerOrder">
+                            <label class="lblOrden" for="selectOrder">Orden:</label>
+                            <select id="selectOrder" name="selectOrder">
+                                <option value="nombre" selected>Nombre de Personaje</option>
+                                <option value="id">Id de Personaje</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section>
+            <div class="panelCardSelected" id="panelCard" >
+                <div class="container-verMas">
+
+                </div>
+                <div class="container-btns">
+                    
+                </div>
+            </div>
+        </section>
+        <!-- <div class="spinner"></div> -->
+        <div id="loading-message">
+            <img src="../images/logoCargandoPagina.png" alt="Logo de Marvel">
+            <p>Cargando Personajes . . .</p></div>
+        <section id = "sectionCards">
+            <div class="container-cards">
+            </div>
+        </section>
+    </div>
+    <div class="container-paginacion">
+
+    </div>
+    <div class="pagination">
+        <button id="previous" class="btn" data-target="sectionCards">anterior</button>
+        <span id="page-number"></span>
+        <button id="next" class="btn" data-target="sectionCards">siguiente</button>
+    </div>
+    <footer>
+        <div class="footer-info">
+            <div class="footer-info-links">
+                <svg viewBox="0 0 36 52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect fill="#EC1D24" width="100%"
+                height="100%"></rect><path fill="#FEFEFE" d="M31.5 48V4H21.291l-3.64 22.735L14.102 4H4v44h8V26.792L15.577
+                48h4.229l3.568-21.208V48z"></path></svg>
+    
+                <nav class="primary-links">
+                    <ul>
+                        <li><a href="https://www.marvel.com/corporate/about" class="user-menu-tab sign" target="_blank">ACERCA DE MARVEL</a></li>
+                        <li><a href="https://help.marvel.com/hc/en-us" class="user-menu-tab sign" target="_blank" >HELP/FAQS</a></li>
+                        <li><a href="https://jobs.disneycareers.com/search-jobs?orgIds=391-1635-24091&ascf=[{%22key%22:%22custom_fields%252EIndustryCustomField%22,%22value%22:%22Marvel%20Entertainment%22}]" class="user-menu-tab sign">JOBS</a></li>
+                        <li><a href="https://www.marvel.com/corporate/interns" class="user-menu-tab sign" target="_blank">PRÁCTICAS </a></li>
+                    </ul>
+                </nav>
+    
+                <nav class="secundary-links">
+                    <ul>
+                        <li><a href="https://www.marvel.com/corporate/advertising" class="user-menu-tab sign" target="_blank">PUBLICIDAD</a></li>
+                        <li><a href="https://www.disneyplus.com/brand/marvel?cid=DTCI-Synergy-Marvel-Site-Acquisition-Library-US-Marvel-NA-EN-NavFooter-Marvel_DisneyPlus_NavFooter_Evergreen-NA" class="user-menu-tab sign" target="_blank"DISNEY+></a> </li>
+                        <li><a href="https://www.marvelhq.com/" class="user-menu-tab sign" target="_blank">MARVELHQ.COM</a></li>
+                        <li><a href="https://www.marvel.com/signin?referer=http%3A%2F%2Fwww.marvel.com%2Fredeem" class="user-menu-tab sign" target="_blank">REDIMIR</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-promo-links">
+    
+                <div class="footer__promotion">
+                    <div class="figures-img">
+                        <a href="https://www.marvel.com/insider?cid=Dcom_navigation_20200929_insider_footer" class="user-menu-tab sign" target="_blank">
+                            <figure class="img__wrapper">
+                                <img src="https://cdn.marvel.com/content/1x/marvel_insider-topnav-logo-large2x.png"
+                                     alt="Marvel Insider Logo" class="main-footer__promotion-image">
+                            </figure>
+                        </a>
+                        <a href="https://www.marvel.com/unlimited?cid=dcom_navigation_20220712_unlimited_footer" class="user-menu-tab sign" target="_blank">
+                            <figure class="img__wrapper">
+                                <img src="https://cdn.marvel.com/content/1x/mu-logo-w-nav-2x-2021-02.png"
+                                     alt="Marvel Unlimited Logo" class="main-footer__promotion-image">
+                            </figure>
+                        </a>
+                    </div>
+    
+                <div class="footer-promotion-text">
+                    <div class="footer__promotion-info">
+                        <h4 class="footer__promotion-title">Marvel Insider</h4>
+                        <p class="footer__promotion-description">Get Rewarded for Being a Marvel Fan</p>
+                    </div>
+    
+    
+                    <div class="footer__promotion-info">
+                        <h4 class="footer__promotion-title">Marvel Unlimited</h4>
+                        <p class="footer__promotion-description">Access Over 30,000+ Digital Comics</p>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    
+    
+        </div>
+    </footer>
+    <script src="../js/personajes.js"></script>
+</body>
+</html>

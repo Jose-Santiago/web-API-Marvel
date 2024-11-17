@@ -1,0 +1,322 @@
+html {
+    font-size: 62.5%;
+    font-family: "RobotoCondensed Bold","Trebuchet MS",Helvetica,Arial,sans-serif;
+}
+
+body{
+    background-color: black;
+    color: white;
+    box-sizing: border-box;
+    margin: 0;
+
+}
+
+.container {
+    /* Establece una altura o mínimo para el contenedor principal */
+    min-height: 100vh;
+    background-color: var(--background);
+    width: 100%;
+    /*height: 1000px;*/
+    min-width: 320px;
+    margin: 0;
+}
+.container_nav{
+    display: flex;
+    justify-content: space-between;
+    /*padding: 2rem;*/
+}
+
+.filters{
+    background-color: black;
+    /*padding: 10px;*/
+    /*position: sticky;*/
+    margin: 30px 0 30px 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 250px;
+    gap: 5px;
+
+}
+
+.link-container{
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-family: "RobotoCondensed Bold","Trebuchet MS",Helvetica,Arial,sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6rem;
+}
+
+li{
+    list-style: none;
+    display: inline-block;
+}
+.container-navvar img{
+    margin-right: 55px;
+}
+
+.search-icon {
+    padding: 10px;
+    color: #666; /* Color del ícono */
+}
+
+.buscador-filter{
+    margin-top: 55px;
+    height: 40px;
+    display: flex;
+    cursor: pointer;
+    padding: 10px 20px;
+    background: #fff;
+    border-radius: 30px;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(245, 39, 145, 0)
+}
+
+.buscador-filter:hover input{
+    width: 370px;
+    font-size: 19px;
+}
+
+.buscador-filter input{
+    width: 0;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    transition: 0.8s;
+    background: transparent;   
+}
+
+.buscador-filter i{
+    color: black;    
+    font-size: 20px;
+}
+
+
+.buscador {
+    display: flex;
+    align-items: center;
+}
+
+.buscador input {
+    border: none;
+    border-radius: 20px; /* Bordes semicirculares */
+    padding: 10px;
+    font-size: 14px;
+    outline: none; /* Elimina el borde de enfoque */
+    flex: 1; /* Hace que el input ocupe todo el espacio disponible horizontalmente */
+    position: relative; /* Agrega una posición relativa al input */
+}
+
+.buscador input::before {
+    content: "\f002"; /* Código Unicode del ícono (fa-search) */
+    font-family: 'FontAwesome';
+    color: #666; /* Color del ícono */
+    position: absolute; /* Posición absoluta para superponer el ícono en el input */
+    left: 10px; /* Ajusta la posición izquierda del ícono */
+}
+
+
+/* Estilo para el input con el ícono */
+.buscador input:focus {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Sombra en enfoque */
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    /*padding: 50px 20px;*/
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* No necesitas "position: sticky" en este nivel */
+}
+
+.filterContainers {
+    width: 100%;
+}
+
+
+.filter {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 5px;
+    color: white;
+    flex: 1; /* Distribuye el espacio disponible verticalmente */
+    width: 20%;
+}
+
+.filter label, .filter label select, .filter #personajeSelect, .filter #autorSelect{
+    font-family: "RobotoCondensed Bold","Trebuchet MS",Helvetica,Arial,sans-serif;
+    font-size: 15px;
+    color: #f9f6f6;
+    font-size: 17px;
+}
+
+.filter label select, .filter #personajeSelect, .filter #autorSelect{
+    border: 1px solid #f9f6f6;
+    /*border-bottom: 1px solid #f9f6f6;
+    background: transparent;*/
+    outline: none;
+    height: 35px;
+    color: white;
+    transition: 0.5s;
+}
+
+
+.reset-filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra verticalmente el contenido en el eje Y */
+}
+
+.resetButtom {
+    margin-top: 20px;
+    background-color: #fff; /* Fondo blanco para el botón */
+    color: #000; /* Texto negro para que sea legible */
+    border: 1px solid #fff; /* Borde blanco alrededor del botón */
+    border-radius: 25px; /* Bordes redondeados */
+    padding: 10px 15px; /* Espaciado interno para hacer el botón más grande */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón para indicar que es interactivo */
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves al cambiar de color */
+}
+
+.resetButtom:hover {
+    background-color: #000; /* Cambia el fondo a negro al pasar el cursor sobre el botón */
+    color: #fff; /* Cambia el color del texto a blanco al pasar el cursor sobre el botón */
+}
+
+
+.filter select {
+    background-color: #555;
+    color: white;
+    border: 1px solid #777;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    width: 100%;
+}
+
+.cardsContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 55px;
+}
+
+.comic {
+    
+    width: 300px;
+    background-color: rgb(54, 27, 95,0.3);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    margin: 40px 20px;
+}
+
+/* Estilos para la imagen de la tarjeta */
+.img-thumbnailcomic {
+    max-width: 150px;
+    max-height: 300px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Estilos para el título de la tarjeta */
+.title-comic {
+    font-size: 2rem;
+    color: #f8f3f3;
+    margin: 10px 0;
+}
+
+/* Estilos para la información adicional de la tarjeta */
+.info {
+    font-size: 1.2rem;
+    color: #f9f6f6;
+    margin: 10px 0;
+}
+
+
+
+label{
+    color: #f9f6f6;
+    font-size:  10px;
+}
+
+.buttonPage {
+    width: 200px; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    
+}
+
+
+
+.nav-button {
+    border-radius: 20px;
+    width: 80px;
+    background-color: #181515; 
+    color: white; 
+    border: none; 
+    padding: 10px 0px; 
+    cursor: pointer;
+    
+}
+
+#loading-message {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(24, 21, 21, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    gap: 30px;
+  }
+  
+  #loading-message img {
+    width: 100px; 
+    animation: rotar 2s linear infinite; 
+    transform-origin: center;
+    filter: drop-shadow(0px 7px 21px #1e00ff)
+  }
+  
+  @keyframes rotar{
+    from{
+        transform: rotateY(180deg);
+    }
+    to{
+        transform: rotateY(-180deg);
+    }
+}
+  
+  #loading-message p {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+@media (max-width: 480px) {
+    .cardsContainer{
+        justify-content: center;
+        align-items: center; 
+    }
+ }
+
+

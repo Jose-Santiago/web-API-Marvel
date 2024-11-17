@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto MARVEL</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./images/avatar.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<body>
+
+<div class="container">
+    <nav>
+        <div class="container-navvar">
+            <ul class="link-container" id="link-container">
+                <li><i class='bx bx-home-smile'></i><a href="index.html">Home</a></li>
+                <li><i class='bx bxl-heroku'></i><a href="pages/personajes.html">Personajes</a></li>
+                <li id="comics" class="comics"><i class='bx bx-book-reader'></i><a href="pages/comics.html">Comics</a></li>
+                <li id="series" class="series"><i class='bx bx-tv'></i><a href="pages/series.html">Series</a></li>
+            </ul>
+
+            <div class="link-container-user-menu" id="openModal">
+                <a href="#" class="user-menu-tab sign"><i class='bx bx-door-open'></i>Sesión</a>
+                <span class="user-menu-tab separator"> | </span>
+                <a class="user-menu-tab" id="user-join"><i class='bx bxs-edit-location'></i>Registrate</a>
+            </div>
+        </div>
+        <div class="banner">
+            <img src="images/avengers_back.jpg" alt="avengers" >
+            <div class="banner-text">
+                <span>UNIVERSO MARVEL</span>
+                <span>Dejate Enganchar a un abundante universo de héroes y villanos!</span>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<!-- Modal-->
+<dialog class="modal-container" id="modal">
+    <div class="modal-header">
+        <img src="https://cdn.registerdisney.go.com/v4/asset/bundler/MARVEL/v4/images/v1/marvel-logo.svg" alt="disney-login" >
+        <a class="user-menu-tab" id="user-close"><i class='bx bx-window-close'></i></i></a>
+    </div>
+    <div class="modal-body">
+        <h1 id="title">SIGN IN</h1>
+
+        <h2>Ingresa tus Datos</h2>
+        <p>
+            Inicia sesión en tu cuenta de Marvel. Si te registras tendras acceso
+            a mas contenido.
+        </p>
+
+        <form id="form">
+            <div class="group-input">
+                <div class="input-field">
+                    <label for="input-email"></label>
+                    <input type="email" id="input-email" name="input-email" placeholder="Email" required>
+                </div>
+                <div class="input-field" id="name-field">
+                    <label for="input-pass"></label>
+                    <input type="password" id="input-pass" name="input-pass" placeholder="Password" required>
+                </div>
+                <div class="input-field" id="nombres">
+                    <label for="input-nombres"></label>
+                    <input type="text" id="input-nombres" name="input-nombres" placeholder="Nombres" required>
+                </div>
+            </div>
+
+            <div class="button-field">
+                <button type="button" id="btn-signin">Ingresa</button>
+                <button type="submit" id="btn-signup" class="disable">Registrate</button>
+            </div>
+            <div class="footer-logos">
+                <img src="images/disney-logo.png">
+                <img src="images/MARVEL-GRIS.png">
+                <img src="images/star_wars.jpg">
+                <img src="images/star-plus-logo-0.png">
+                <img src="images/logo.png">
+            </div>
+        </form>
+    </div>
+    <div class="overlay"></div>
+</dialog>
+<!-- modal-->
+
+
+<article>
+    <div class="article-content">
+            <img src="images/comics.jpg" alt="comics" class="img_content">
+        <div class="article-content-info">
+            <h2>Comics</h2>
+            <span> ¡Únete junto a las organizaciones encubiertas, bandas de bandidos de tipos malos y escuadrones de superhéroes que dan forma al Universo Marvel!. </span>
+        </div>
+            <img src="images/series.jpg" alt="comics" class="img_content">
+        <div class="article-content-info">
+            <h2>Series</h2>
+            <span>¡Explora los personajes y las historias que dan forma a Marvel TV!
+</span>
+        </div>
+            <img src="images/tv.jpg" alt="comics" class="img_content">
+        <div class="article-content-info">
+            <h2>Personajes</h2>
+            <span> ¡Viaja a las profundidades cósmicas del poderoso Universo Cinematográfico de Marvel! </span>
+        </div>
+
+    </div>
+</article>
+
+<footer>
+    <div class="footer-info">
+        
+        <div class="footer-social">
+            <div>
+                <!-- <h4 class="footer__promotion-title">Siguenos!</h4> -->
+            </div>
+            
+            <div class="footer-social-links">
+                <a target="_blank" href="http://facebook.com/marvel"><i class='bx bxl-facebook-circle'></i></a>
+                <a target="_blank" aria-label="follow us on Twitter, opens a new window" href="http://twitter.com/marvel"><i class='bx bxl-twitter' ></i></a>
+                <a target="_blank" href="http://instagram.com/marvel"><i class='bx bxl-instagram' ></i></a>
+                <a target="_blank" href="http://youtube.com/marvel"><i class='bx bxl-youtube' ></i></a>
+                <a target="_blank" href="https://www.pinterest.com/marvelofficial"><i class='bx bxl-pinterest' ></i></a>
+                
+            </div>
+        </div>
+        <div class="footer-info-links">
+            <svg viewBox="0 0 36 52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect fill="#EC1D24" width="100%"
+            height="100%"></rect><path fill="#FEFEFE" d="M31.5 48V4H21.291l-3.64 22.735L14.102 4H4v44h8V26.792L15.577
+            48h4.229l3.568-21.208V48z"></path></svg>
+
+            <nav class="primary-links">
+                <ul>
+                    <li><a href="https://www.marvel.com/corporate/about" class="user-menu-tab sign" target="_blank">ACERCA DE MARVEL</a></li>
+                    <li><a href="https://help.marvel.com/hc/en-us" class="user-menu-tab sign" target="_blank" >HELP/FAQS</a></li>
+                    <li><a href="https://jobs.disneycareers.com/search-jobs?orgIds=391-1635-24091&ascf=[{%22key%22:%22custom_fields%252EIndustryCustomField%22,%22value%22:%22Marvel%20Entertainment%22}]" class="user-menu-tab sign">JOBS</a></li>
+                    <li><a href="https://www.marvel.com/corporate/interns" class="user-menu-tab sign" target="_blank">PRÁCTICAS </a></li>
+                </ul>
+            </nav>
+
+            <nav class="secundary-links">
+                <ul>
+                    <li><a href="https://www.marvel.com/corporate/advertising" class="user-menu-tab sign" target="_blank">PUBLICIDAD</a></li>
+                    <li><a href="https://www.disneyplus.com/brand/marvel?cid=DTCI-Synergy-Marvel-Site-Acquisition-Library-US-Marvel-NA-EN-NavFooter-Marvel_DisneyPlus_NavFooter_Evergreen-NA" class="user-menu-tab sign" target="_blank"DISNEY+></a> </li>
+                    <li><a href="https://www.marvelhq.com/" class="user-menu-tab sign" target="_blank">MARVELHQ.COM</a></li>
+                    <li><a href="https://www.marvel.com/signin?referer=http%3A%2F%2Fwww.marvel.com%2Fredeem" class="user-menu-tab sign" target="_blank">REDIMIR</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer-promo-links">
+
+            <div class="footer__promotion">
+                <div class="figures-img">
+                    <a href="https://www.marvel.com/insider?cid=Dcom_navigation_20200929_insider_footer" class="user-menu-tab sign" target="_blank">
+                        <figure class="img__wrapper">
+                            <img src="https://cdn.marvel.com/content/1x/marvel_insider-topnav-logo-large2x.png"
+                                 alt="Marvel Insider Logo" class="main-footer__promotion-image">
+                        </figure>
+                    </a>
+                    <a href="https://www.marvel.com/unlimited?cid=dcom_navigation_20220712_unlimited_footer" class="user-menu-tab sign" target="_blank">
+                        <figure class="img__wrapper">
+                            <img src="https://cdn.marvel.com/content/1x/mu-logo-w-nav-2x-2021-02.png"
+                                 alt="Marvel Unlimited Logo" class="main-footer__promotion-image">
+                        </figure>
+                    </a>
+                </div>
+
+            <div class="footer-promotion-text">
+                <div class="footer__promotion-info">
+                    <h4 class="footer__promotion-title">Marvel Insider</h4>
+                    <p class="footer__promotion-description">Get Rewarded for Being a Marvel Fan</p>
+                </div>
+
+
+                <div class="footer__promotion-info">
+                    <h4 class="footer__promotion-title">Marvel Unlimited</h4>
+                    <p class="footer__promotion-description">Access Over 30,000+ Digital Comics</p>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    </div>
+</footer>
+
+
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
